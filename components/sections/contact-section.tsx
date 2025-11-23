@@ -15,7 +15,6 @@ export function ContactSection({ isActive }: ContactSectionProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission logic here if needed, or keep it static/mocked
     alert("Message sent!")
   }
 

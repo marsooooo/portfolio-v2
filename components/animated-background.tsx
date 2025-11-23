@@ -2,15 +2,14 @@
 
 import { useEffect, useRef } from "react"
 
-// Simple 3D noise implementation
 const PERLIN_YWRAPB = 4
 const PERLIN_YWRAP = 1 << PERLIN_YWRAPB
 const PERLIN_ZWRAPB = 8
 const PERLIN_ZWRAP = 1 << PERLIN_ZWRAPB
 const PERLIN_SIZE = 4095
 
-const perlin_octaves = 4 // default to medium quality
-const perlin_amp_falloff = 0.5 // default to 50% reduction/octave
+const perlin_octaves = 4
+const perlin_amp_falloff = 0.5
 
 const scaled_cosine = (i: number) => 0.5 * (1.0 - Math.cos(i * Math.PI))
 
@@ -127,13 +126,11 @@ export function AnimatedBackground() {
       ctx.strokeStyle = "rgba(255, 255, 255, 0.1)"
       ctx.lineWidth = 6
 
-      // Grid settings
       const gap = 80
       const size = Math.max(canvas.width, canvas.height) * 1.5
       const count = Math.ceil(size / gap) * 2
 
-      // Noise settings
-      const noiseScale = 0.0015 // How "zoomed in" the noise is
+      const noiseScale = 0.0015
       const distortionStrength = 250
       const timeSpeed = 0.0005
 
@@ -148,7 +145,6 @@ export function AnimatedBackground() {
           const u = j * step - size / 2
           const v = offset
 
-          // Base diagonal line coordinates
           const angle = Math.PI / 4
           const cos = Math.cos(angle)
           const sin = Math.sin(angle)
@@ -156,22 +152,12 @@ export function AnimatedBackground() {
           let x = u * cos - v * sin + canvas.width / 2
           let y = u * sin + v * cos + canvas.height / 2
 
-          // Apply Noise Distortion
-          // We sample noise based on the screen position (x,y)
-          // This ensures that lines in the same area get the same distortion
           const noiseVal = noise(x * noiseScale, y * noiseScale, time * timeSpeed)
-
-          // Calculate displacement vector from noise
-          // Using noise value to drive perpendicular displacement to the diagonal
           const displacement = (noiseVal - 0.5) * 2 * distortionStrength
 
-          // Apply displacement perpendicular to the line angle
-          // Perpendicular to 45deg is -45deg or 135deg
-          // cos(135) = -0.707, sin(135) = 0.707
           x += displacement * -sin
           y += displacement * cos
 
-          // Mouse Interaction
           const dx = x - mouseSmoothed.x
           const dy = y - mouseSmoothed.y
           const dist = Math.sqrt(dx * dx + dy * dy)
@@ -179,7 +165,6 @@ export function AnimatedBackground() {
 
           if (dist < interactionRadius) {
             const force = Math.pow(1 - dist / interactionRadius, 2) * 60
-            // Push away from mouse
             x += (dx / dist) * force
             y += (dy / dist) * force
           }

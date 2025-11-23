@@ -24,8 +24,6 @@ export function ProjectsSection({ isActive, onProjectClick, projectImages = {} }
       <h1 className="text-4xl md:text-6xl font-black mb-8 text-center">{t("projects_header")}</h1>
       <div className="flex flex-col gap-4 max-h-[50vh] md:max-h-[450px] overflow-y-auto pr-2 custom-scrollbar">
         {projects.map((project) => {
-          // If dynamic images exist, use the first one (which should be _0 based on sort)
-          // Otherwise fallback to static definition or placeholder
           const dynamicImages = projectImages[project.id]
           const coverImage = dynamicImages && dynamicImages.length > 0 ? dynamicImages[0] : project.image
 

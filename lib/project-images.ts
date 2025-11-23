@@ -4,12 +4,10 @@ export async function getProjectImages(): Promise<ProjectImages> {
 
 
   try {
-    // This logic detects if we are effectively in a browser/edge runtime where 'fs' is missing
     if (typeof window !== "undefined" || process.env.NEXT_RUNTIME === "edge") {
       throw new Error("Browser/Edge environment")
     }
 
-    // Dynamically import node modules to avoid build-time errors in browser bundles
     const fs = await import("fs")
     const path = await import("path")
 
@@ -34,7 +32,6 @@ export async function getProjectImages(): Promise<ProjectImages> {
       }
     })
 
-    // Sort
     Object.keys(imagesMap).forEach((projectId) => {
       imagesMap[projectId].sort((a, b) => {
         const getIndex = (p: string) => {

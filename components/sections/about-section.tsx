@@ -22,7 +22,6 @@ export function AboutSection({ isActive }: AboutSectionProps) {
         <p className="text-lg md:text-2xl font-bold">{t("about_text")}</p>
         <p className="text-base md:text-xl font-thin">{t("about_text2")}</p>
         <p className="text-lg md:text-2xl font-normal">{t("about_text3")}</p>
-        <p className="text-base md:text-xl font-thin">{t("about_text4")}</p>
       </div>
     </div>
   )

@@ -4,8 +4,8 @@ export type Project = {
   id: string
   titleKey: string
   descKey: string
-  image?: string // made optional as we might load it dynamically
-  technologies: string[] // Added technologies array
+  image?: string
+  technologies: string[]
   details: {
     titleKey: string
     durationKey?: string
@@ -24,16 +24,14 @@ export const translations: Record<Language, Record<string, string>> = {
     title: "Tison Marceau Portfolio",
     welcome: "Welcome to my portfolio !",
     discover:
-      "Discover all my latest projects as well as some informations about me and my hobbies. Site is still under development and may lead to some issues on certain devices.",
+      "Discover all my latest projects as well as some informations about me and my hobbies.",
     about_me_header: "About Me",
     about_text:
-      "My name is Marceau, I'm a student web developer at MyDigitalSchool and currently looking for an apprenticeship for 2025.",
+      "My name is Marceau, I'm a currently studying a Bachelor’s Degree in Software Development and currently looking for an apprenticeship for 2026.",
     about_text2:
       "I thrive on building functional systems that not only look great but also provide real value to users. With every project, I aim to blend aesthetics and usability seamlessly.",
     about_text3:
-      "I always had a strong interest in IT and design, after almost 3 years in college as a computer science student I discovered web development and immediately fell for it and its endless possibilities.",
-    about_text4:
-      "Since then I’ve been studying different tools to become a great asset for my teams and work efficiently on my own.",
+      "I’ve been studying different tools to become a great asset for my teams and work efficiently on my own.",
     projects_header: "My projects",
     contact_header: "Let's get in touch",
     first_name: "First Name",
@@ -121,19 +119,17 @@ export const translations: Record<Language, Record<string, string>> = {
     projetspe_description: "PHP & JS",
   },
   fr: {
-    title: "Portfolio de Tison Marceau",
+    title: "Marceau Tison",
     welcome: "Bienvenue sur mon portfolio !",
     discover:
-      "Découvrez tous mes derniers projets ainsi que des informations sur moi et mes hobbies. Ce site est encore en développement et n'est peut être pas adapté à tous les appareils.",
+      "Découvrez tous mes derniers projets ainsi que des informations sur moi et mes hobbies.",
     about_me_header: "À propos de moi",
     about_text:
-      "Je m'appelle Marceau, je suis étudiant en développement web à MyDigitalSchool et je suis actuellement à la recherche d'un apprentissage pour 2025.",
+      "Je m'appelle Marceau, j'étudie en Bachelor conception & développement d'applications et je suis actuellement à la recherche d'un apprentissage pour 2026.",
     about_text2:
       "J'aime créer des systèmes fonctionnels qui non seulement sont beaux, mais aussi apportent une véritable valeur aux utilisateurs. À chaque projet, je cherche à allier esthétique et utilité.",
     about_text3:
-      "J'ai toujours eu un fort intérêt pour l'informatique et le design, après presque 3 ans à l'université en informatique, j'ai découvert le développement web et je suis immédiatement tombé sous le charme de ses possibilités infinies.",
-    about_text4:
-      "Depuis, j'étudie différents outils pour devenir un atout majeur pour mes équipes et travailler efficacement seul.",
+      "J'étudie différents outils pour devenir un atout majeur pour mes équipes et travailler efficacement seul.",
     projects_header: "Mes projets",
     contact_header: "Entrons en contact",
     first_name: "Prénom",
@@ -228,7 +224,7 @@ export const projects: Project[] = [
     id: "outfitters",
     titleKey: "outfitters_title",
     descKey: "outfitters_description",
-    technologies: ["TypeScript", "Express", "Prisma", "PostgreSQL", "React", "React Native"],
+    technologies: ["TypeScript", "Express", "Prisma", "PostgreSQL", "React", "React Native", "Docker"],
     image: "/placeholder.svg?height=150&width=200",
     details: {
       titleKey: "outfitters_project_title",

@@ -19,6 +19,7 @@ const getTechColor = (tech: string) => {
   if (t.includes("godot")) return "bg-[#478CBF]/20 text-[#478CBF]"
   if (t.includes("sql") || t.includes("database")) return "bg-[#4479A1]/20 text-[#4479A1]"
   if (t.includes("tailwind")) return "bg-[#38B2AC]/20 text-[#38B2AC]"
+  if (t.includes("docker")) return "bg-[#0DB7ED]/20 text-[#0DB7ED]"
   return "bg-white/10 text-gray-300"
 }
 

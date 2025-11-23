@@ -1,0 +1,27 @@
+import type React from "react"
+import type { Metadata } from "next"
+import { Albert_Sans } from "next/font/google"
+import "./globals.css"
+
+const albertSans = Albert_Sans({
+  subsets: ["latin"],
+  weight: ["100", "400", "500", "600", "700", "900"],
+  variable: "--font-albert-sans",
+})
+
+export const metadata: Metadata = {
+  title: "Tison Marceau Portfolio",
+  description: "Web Developer & Design Enthusiast",
+}
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
+  return (
+    <html lang="en">
+      <body className={albertSans.className}>{children}</body>
+    </html>
+  )
+}

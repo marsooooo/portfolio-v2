@@ -137,7 +137,7 @@ export function AnimatedBackground() {
       for (let i = -count; i < count; i++) {
         ctx.beginPath()
 
-        const segments = 400
+        const segments = 600
         const step = size / segments
         const offset = i * gap
 

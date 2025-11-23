@@ -33,7 +33,6 @@ jobs:
       - name: Build and Export SPA
         run: |
           npm run build
-          npm run export
 
       - name: Prepare SSH key
         run: |

@@ -25,6 +25,11 @@ jobs:
       - name: Check code (Lint)
         run: npm run lint
 
+      - name: Clean node_modules & Install
+        run: |
+          rm -rf node_modules package-lock.json
+          npm install
+
       - name: Build application
         run: npm run build
 

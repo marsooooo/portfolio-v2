@@ -39,6 +39,7 @@ jobs:
         run: |
           ssh -i ~/.ssh/id_rsa ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} "mkdir -p ${{ secrets.VPS_TARGET_DIR }}"
           rsync -avz --delete -e "ssh -i ~/.ssh/id_rsa" .next/standalone/ ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:${{ secrets.VPS_TARGET_DIR }}
+          # Sync static assets
           rsync -avz --delete -e "ssh -i ~/.ssh/id_rsa" .next/static/ ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:${{ secrets.VPS_TARGET_DIR }}/.next/static
           rsync -avz --delete -e "ssh -i ~/.ssh/id_rsa" public/ ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:${{ secrets.VPS_TARGET_DIR }}/public
 
@@ -50,6 +51,7 @@ jobs:
               echo "PM2 app 'portfolio' exists, reloading..."
               pm2 reload portfolio
             else
+              echo "PM2 app 'portfolio' does not exist, starting new instance..."
               pm2 start server.js --name portfolio
             fi
             pm2 save

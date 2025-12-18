@@ -1,6 +1,7 @@
 "use client"
 
 import { useLanguage } from "@/contexts/language-context"
+import { useTheme } from "@/contexts/theme-context"
 import { cn } from "@/lib/utils"
 
 interface HomeSectionProps {
@@ -9,11 +10,14 @@ interface HomeSectionProps {
 
 export function HomeSection({ isActive }: HomeSectionProps) {
   const { t } = useLanguage()
+  const { theme } = useTheme()
 
   return (
     <div
       className={cn(
-        "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] md:w-[40%] transition-all duration-500 flex flex-col items-center justify-center text-center text-white z-10",
+        `absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] md:w-[40%] transition-all duration-500 flex flex-col items-center justify-center text-center z-10 ${
+          theme === "light" ? "text-[#333]" : "text-white"
+        }`,
         isActive ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none translate-y-[20px]",
       )}
     >

@@ -242,7 +242,7 @@ export const projects: Project[] = [
     id: "peaxy",
     titleKey: "peaxy_title",
     descKey: "peaxy_description",
-    technologies: ["TypeScript", "React", "TailwindCSS", "Express", "RadixUI"],
+    technologies: ["TypeScript", "Next", "TailwindCSS", "Express", "RadixUI"],
     image: "/placeholder.svg?height=150&width=200",
     details: {
       titleKey: "peaxy_project_title",

@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import { LanguageSwitcher } from "@/components/language-switcher"
 import { Navigation } from "@/components/navigation"
 import { AnimatedBackground } from "@/components/animated-background"
 import { InfoOverlay } from "@/components/info-overlay"
@@ -11,6 +10,7 @@ import { ProjectsSection } from "@/components/sections/projects-section"
 import { ContactSection } from "@/components/sections/contact-section"
 import { ProjectModal } from "@/components/project-modal"
 import type { Project } from "@/lib/data"
+import { useTheme } from "@/contexts/theme-context"
 
 interface MainContentProps {
   projectImages?: Record<string, string[]>
@@ -22,6 +22,7 @@ export function MainContent({ projectImages = {} }: MainContentProps) {
   const [activeSection, setActiveSection] = useState<Section>("home")
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const { theme } = useTheme()
 
   const handleProjectClick = (project: Project) => {
     setSelectedProject(project)
@@ -31,11 +32,16 @@ export function MainContent({ projectImages = {} }: MainContentProps) {
   const selectedProjectImages = selectedProject ? projectImages[selectedProject.id] || [] : []
 
   return (
-    <main className="relative w-screen h-screen overflow-hidden box-border font-sans">
+    <main className="relative w-screen h-screen overflow-hidden box-border font-sans" data-theme={theme}>
       <AnimatedBackground />
-      <LanguageSwitcher />
 
-      <div className="absolute top-0 left-0 w-full h-full border-[40px] border-[#141414] shadow-[inset_0_0_0_1px_#D6D6D6] flex justify-center items-center z-10 pointer-events-none hidden md:flex">
+      <div
+        className={`absolute top-0 left-0 w-full h-full border-[40px] ${
+          theme === "light" ? "border-[#f5f5f5]" : "border-[#141414]"
+        } ${
+          theme === "light" ? "shadow-[inset_0_0_0_1px_#333]" : "shadow-[inset_0_0_0_1px_#D6D6D6]"
+        } flex justify-center items-center z-10 pointer-events-none hidden md:flex`}
+      >
         {/* This div creates the border effect on desktop */}
       </div>
 

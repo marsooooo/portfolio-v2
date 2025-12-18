@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef } from "react"
+import { useTheme } from "@/contexts/theme-context"
 
 const PERLIN_YWRAPB = 4
 const PERLIN_YWRAP = 1 << PERLIN_YWRAPB
@@ -88,6 +89,7 @@ const noise = (x: number, y = 0, z = 0) => {
 
 export function AnimatedBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const { theme } = useTheme()
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -117,13 +119,13 @@ export function AnimatedBackground() {
 
     const draw = () => {
       if (!ctx) return
-      ctx.fillStyle = "#141414"
+      ctx.fillStyle = theme === "light" ? "#f5f5f5" : "#141414"
       ctx.fillRect(0, 0, canvas.width, canvas.height)
 
       mouseSmoothed.x += (mouse.x - mouseSmoothed.x) * 0.05
       mouseSmoothed.y += (mouse.y - mouseSmoothed.y) * 0.05
 
-      ctx.strokeStyle = "rgba(255, 255, 255, 0.1)"
+      ctx.strokeStyle = theme === "light" ? "rgba(0, 0, 0, 0.08)" : "rgba(255, 255, 255, 0.1)"
       ctx.lineWidth = 6
 
       const gap = 80
@@ -190,7 +192,7 @@ export function AnimatedBackground() {
       window.removeEventListener("resize", resize)
       cancelAnimationFrame(animationFrameId)
     }
-  }, [])
+  }, [theme])
 
   return <canvas ref={canvasRef} className="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none" />
 }

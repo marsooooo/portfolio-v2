@@ -1,6 +1,7 @@
 "use client"
 
 import { useLanguage } from "@/contexts/language-context"
+import { useTheme } from "@/contexts/theme-context"
 import { cn } from "@/lib/utils"
 
 interface AboutSectionProps {
@@ -9,11 +10,14 @@ interface AboutSectionProps {
 
 export function AboutSection({ isActive }: AboutSectionProps) {
   const { t } = useLanguage()
+  const { theme } = useTheme()
 
   return (
     <div
       className={cn(
-        "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] md:w-[40%] transition-all duration-500 text-white z-10",
+        `absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] md:w-[40%] transition-all duration-500 z-10 ${
+          theme === "light" ? "text-[#333]" : "text-white"
+        }`,
         isActive ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none translate-y-[20px]",
       )}
     >

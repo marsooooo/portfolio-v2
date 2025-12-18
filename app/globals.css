@@ -135,14 +135,24 @@
   background: transparent;
 }
 
+/* Updated scrollbar colors based on theme */
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #ffffff;
+  border-radius: 8px;
+}
+
+[data-theme="light"] .custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #000000;
   border-radius: 8px;
 }
 
 .custom-scrollbar {
   scrollbar-width: thin;
   scrollbar-color: #ffffff transparent;
+}
+
+[data-theme="light"] .custom-scrollbar {
+  scrollbar-color: #000000 transparent;
 }
 
 /* Border container responsive handling */

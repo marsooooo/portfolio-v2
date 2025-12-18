@@ -1,6 +1,7 @@
 "use client"
 
 import { useLanguage } from "@/contexts/language-context"
+import { useTheme } from "@/contexts/theme-context"
 import { ProjectCard } from "@/components/project-card"
 import { projects, type Project } from "@/lib/data"
 import { cn } from "@/lib/utils"
@@ -13,11 +14,14 @@ interface ProjectsSectionProps {
 
 export function ProjectsSection({ isActive, onProjectClick, projectImages = {} }: ProjectsSectionProps) {
   const { t } = useLanguage()
+  const { theme } = useTheme()
 
   return (
     <div
       className={cn(
-        "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] md:w-[40%] transition-all duration-500 text-white z-10",
+        `absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] md:w-[40%] transition-all duration-500 z-10 ${
+          theme === "light" ? "text-[#333]" : "text-white"
+        }`,
         isActive ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none translate-y-[20px]",
       )}
     >

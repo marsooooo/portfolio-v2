@@ -89,7 +89,7 @@ export const translations: Record<Language, Record<string, string>> = {
     pwg_internship_description:
       "Piwigo is an open-source photo management software designed for organizing, sharing, and hosting image galleries. It is ideal for individuals, photographers, and organizations, offering features like batch processing, user management, tagging, and plugin support. Piwigo can be self-hosted or used via Piwigo.com for cloud hosting. Its flexibility, customization options, and strong community support make it a popular choice for managing large photo libraries.",
     pwg_internship_duration_label: "Duration",
-    riot_project_title: "Riot Api",
+    riot_project_title: "Riot Api (Huge Esports)",
     riot_project_description:
       "This project is my subject of internship at HUGE Esport, this association born in 2023 manages two esports rosters, a League of Legends team playing in french 3rd division considered one of the best in its category, and a VALORANT team playing in the inclusive european league.",
     riot_project_solution:
@@ -100,7 +100,7 @@ export const translations: Record<Language, Record<string, string>> = {
     riot_project_access_link: "Access the app",
     pwg_title: "Piwigo Internship",
     pwg_description: "PHP",
-    riot_title: "Riot Games API app",
+    riot_title: "Riot Games API app (Huge Esports)",
     riot_description: "React & Node.JS",
     gamejam_title: "Cat coins du monde",
     gamejam_description: "Godot 3",
@@ -188,7 +188,7 @@ export const translations: Record<Language, Record<string, string>> = {
     pwg_internship_description:
       "Piwigo est un logiciel open-source de gestion de photos conçu pour organiser, partager et héberger des galeries d'images. Il est idéal pour les particuliers, photographes et organisations, offrant des fonctionnalités telles que le traitement par lot, la gestion des utilisateurs, l'ajout de tags et le support de plugins. Piwigo peut être auto-hébergé ou utilisé via Piwigo.com pour un hébergement cloud. Sa flexibilité, ses options de personnalisation et son soutien communautaire en font un choix populaire pour gérer de grandes bibliothèques de photos.",
     pwg_internship_duration_label: "Durée",
-    riot_project_title: "Riot Api",
+    riot_project_title: "Riot Api (Huge Esports)",
     riot_project_description:
       "Ce projet est mon sujet de stage chez HUGE Esport, une association née en 2023 qui gère deux équipes esports, une équipe League of Legends évoluant en 3e division française, considérée comme l'une des meilleures de sa catégorie, et une équipe VALORANT jouant dans la ligue européenne inclusive.",
     riot_project_solution:
@@ -199,7 +199,7 @@ export const translations: Record<Language, Record<string, string>> = {
     riot_project_access_link: "Accéder à l'application",
     pwg_title: "Stage Piwigo",
     pwg_description: "PHP",
-    riot_title: "Application Riot Games API",
+    riot_title: "Application Riot Games API (Huge Esports)",
     riot_description: "React & Node.JS",
     gamejam_title: "Cat coins du monde",
     gamejam_description: "Godot 3",
@@ -242,7 +242,7 @@ export const projects: Project[] = [
     id: "peaxy",
     titleKey: "peaxy_title",
     descKey: "peaxy_description",
-    technologies: ["TypeScript", "Next", "TailwindCSS", "Express", "RadixUI"],
+    technologies: ["TypeScript", "Next", "TailwindCSS", "Express"],
     image: "/placeholder.svg?height=150&width=200",
     details: {
       titleKey: "peaxy_project_title",
@@ -281,10 +281,6 @@ export const projects: Project[] = [
     details: {
       titleKey: "riot_project_title",
       descriptionKeys: ["riot_project_description", "riot_project_solution", "riot_project_creation"],
-      link: {
-        url: "https://marceau-tison.com/riotapp/",
-        textKey: "riot_project_access_link",
-      },
     },
   },
   {

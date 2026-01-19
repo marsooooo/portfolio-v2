@@ -11,8 +11,7 @@ const albertSans = Albert_Sans({
 
 export const metadata: Metadata = {
   title: "Tison Marceau Portfolio",
-  description: "Full stack Web Developer",
-    generator: 'v0.app'
+  description: "Full stack Web Developer"
 }
 
 export default function RootLayout({

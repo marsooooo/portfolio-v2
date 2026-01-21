@@ -51,6 +51,7 @@ export async function getProjectImages(): Promise<ProjectImages> {
       piwigo: ["/projects/piwigo_0.jpg"],
       riot_api: ["/projects/riot_api_0.jpg"],
       gamejam: ["/projects/gamejam_0.jpg"],
+      discord: ["/projects/discord_0.jpg"],
     }
   }
 }

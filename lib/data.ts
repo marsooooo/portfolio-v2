@@ -117,6 +117,12 @@ export const translations: Record<Language, Record<string, string>> = {
     projetspe_project_image_alt: "Project Image",
     projetspe_title: "Specialization Project",
     projetspe_description: "PHP & JS",
+    discord_title: "Discord Bot",
+    discord_description: "Discord.js & RiotAPI",
+    discord_project_title: "Discord Bot & RiotAPI",
+    discord_project_description:
+      "A discord bot developed to record, display, and refresh League of Legends player stats and rankings directly within a dedicated discord channel. This bot developed using the Discord.JS library and the Riot Games API allows community members to track their performance and that of their friends without having to use third-party sites.",
+
   },
   fr: {
     title: "Marceau Tison",
@@ -216,6 +222,12 @@ export const translations: Record<Language, Record<string, string>> = {
     projetspe_project_image_alt: "Image du projet",
     projetspe_title: "Projet de Spécialité",
     projetspe_description: "PHP & JS",
+    discord_title: "Bot Discord",
+    discord_description: "Discord.js & RiotAPI",
+    discord_project_title: "Bot Discord & RiotAPI",
+    discord_project_description:
+      "Un bot discord développé pour enregistrer, afficher et actualiser les statistiques et classement de joueurs League of Legends directement dans un salon discord dédié. Ce bot développé à l'aide de la librairie Discord.JS et de l'API de Riot Games permet aux membres d'une communauté de suivre leurs performances et celles de leurs amis sans avoir à utiliser de site tiers.",
+
   },
 }
 
@@ -269,6 +281,21 @@ export const projects: Project[] = [
       link: {
         url: "https://github.com/piwigo",
         labelKey: "github",
+      },
+    },
+  },
+  {
+    id: "discord",
+    titleKey: "discord_title",
+    descKey: "discord_description",
+    technologies: ["Discord.js", "Node.js", "MongoDB"],
+    image: "/placeholder.svg?height=150&width=200",
+    details: {
+      titleKey: "discord_project_title",
+      descriptionKeys: ["discord_project_description"],
+        link: {
+          url: "https://github.com/marsooooo/discord-bot",
+          labelKey: "github",
       },
     },
   },
